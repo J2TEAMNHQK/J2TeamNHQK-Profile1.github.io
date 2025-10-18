@@ -1002,11 +1002,11 @@ body {
 
 .research-robot-img {
     position: absolute;
-    top: -40px;
-    right: -40px;
-    width: 180px;
-    height: 180px;
-    opacity: 0.12;
+    top: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    opacity: 0.45;
     pointer-events: none;
     z-index: 0;
 }
@@ -1016,7 +1016,7 @@ body {
     height: 100%;
     object-fit: contain;
     animation: floatRobot 5s ease-in-out infinite;
-    filter: brightness(1.3);
+    filter: brightness(1.5) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 @keyframes floatRobot {
@@ -1030,15 +1030,19 @@ body {
     color: white;
     position: relative;
     z-index: 1;
+    font-size: 1.75rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 900;
 }
 
 .research-icon {
-    font-size: 65px;
+    font-size: 80px;
     text-align: center;
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
     animation: iconPulse 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
 @keyframes iconPulse {
@@ -1048,26 +1052,47 @@ body {
 
 .research-badge {
     display: inline-block;
-    padding: 10px 22px;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 20px;
-    font-weight: 700;
-    margin-bottom: 18px;
-    font-size: 0.95rem;
+    padding: 12px 26px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    border-radius: 25px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: #2C3E50;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .research-title {
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-size: 1.15rem;
+    line-height: 1.8;
     margin-bottom: 15px;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.research-title strong {
+    color: #FFD700;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .research-advisors {
     font-style: italic;
-    opacity: 0.95;
+    opacity: 1;
     display: flex;
     align-items: center;
     gap: 8px;
+    font-size: 1.08rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.research-advisors strong {
+    color: #FFD700;
+    font-weight: 900;
+    font-size: 1.15rem;
 }
 
 /* Phần Dự án projects */
@@ -1441,6 +1466,85 @@ body {
     color: #444;
 }
 
+/* Thông tin cá nhân dạng chữ in nghiêng */
+.personal-info-summary {
+    margin-top: 50px;
+    padding: 40px 45px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFF9F5 100%);
+    border-radius: 22px;
+    box-shadow: 0 10px 45px var(--shadow-soft);
+    border: 2px solid var(--soft-coral);
+    transition: all 0.4s ease;
+}
+
+.personal-info-summary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px var(--shadow-medium);
+    border-color: var(--sunset-orange);
+}
+
+.info-summary-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed var(--soft-coral);
+}
+
+.info-summary-header i {
+    font-size: 32px;
+    color: var(--soft-coral);
+}
+
+.info-summary-header h3 {
+    font-size: 1.75rem;
+    color: var(--dark-text);
+    font-weight: 900;
+    margin: 0;
+    background: linear-gradient(135deg, var(--soft-coral), var(--soft-turquoise));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.info-summary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-italic-text {
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: #555;
+    margin: 0;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    border-left: 4px solid var(--ocean-blue);
+    transition: all 0.3s ease;
+}
+
+.info-italic-text:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateX(10px);
+    border-left-color: var(--soft-coral);
+}
+
+.info-italic-text em {
+    font-style: italic;
+    display: block;
+}
+
+.info-italic-text strong {
+    color: var(--dark-text);
+    font-weight: 800;
+    font-size: 1.12rem;
+    display: inline-block;
+    margin-right: 8px;
+}
+
 /* Phần Certificates chứng chỉ */
 .certificates-section {
     padding: 120px 20px;
@@ -1635,6 +1739,39 @@ body {
 .hobby-card p {
     color: #666;
     font-size: 1rem;
+}
+
+/* Hobby card đặc biệt cho LLM với hình ảnh */
+.hobby-card-llm {
+    position: relative;
+    overflow: hidden;
+}
+
+.llm-image-wrapper {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 18px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px var(--shadow-soft);
+}
+
+.llm-hobby-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hobby-card-llm:hover .llm-hobby-image {
+    transform: scale(1.15);
+}
+
+.hobby-card-llm h3 {
+    background: linear-gradient(135deg, var(--soft-purple), var(--pale-lavender));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* Tranh nghệ thuật artwork */
@@ -2135,5 +2272,33 @@ body {
 
     .gallery-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Responsive cho phần thông tin in nghiêng */
+    .personal-info-summary {
+        padding: 25px 20px;
+        margin-top: 35px;
+    }
+
+    .info-summary-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .info-summary-header h3 {
+        font-size: 1.35rem;
+    }
+
+    .info-italic-text {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        padding: 12px 15px;
+    }
+
+    .info-italic-text strong {
+        font-size: 1rem;
+        display: block;
+        margin-bottom: 5px;
     }
 }
